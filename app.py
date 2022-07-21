@@ -5,10 +5,10 @@ import dash_html_components as html
 import os
 
 ###### Set up variables
-list_of_choices=['punch', 'body-slam', 'round-house kick to the face']
+list_of_choices=['Sing', 'Landlady', 'Landlord', 'The Beast', 'The Tailor']
 githublink = 'https://github.com/austinlasseter/chuck_norris_execution'
 image1='chucknorris.jpg'
-heading1='Chuck Norris execution method'
+heading1='Which Kung Fu Hustle Character Are You?'
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
