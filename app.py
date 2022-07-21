@@ -10,15 +10,16 @@ githublink = 'https://github.com/dsbcintuit/201-chuck-norris-callback'
 image1='poster.jpg'
 list_of_images=['mainguy.jpg', 'landlady.jpg', 'husband.jpg', 'frog.jpg', 'ringsguy.jpg']
 heading1='Which Kung Fu Hustle Character Are You?'
+tabtitle='Tha Hustle'
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
-app.title='Tha Hustle'
+app.title=tabtitle
 
 ####### Layout of the app ########
-app.layout = html.Div([
+app.layout = html.Div(children=[
     html.H2(heading1),
     html.Img(src=app.get_asset_url(image1), style={'width': 'auto', 'height': '10%'}),
     dcc.Dropdown(id='your-input-here',
@@ -27,7 +28,7 @@ app.layout = html.Div([
                 {'label':list_of_choices[1], 'value':list_of_choices[1]},
                 {'label':list_of_choices[2], 'value':list_of_choices[2]},
                 {'label':list_of_choices[3], 'value':list_of_choices[3]},
-                {'label':list_of_choices[4], 'value':list_of_choices[4]}
+                {'label':list_of_choices[4], 'value':list_of_choices[4]},
                 ],
                 value=list_of_images[5],
                 style={'width': '500px'}),
