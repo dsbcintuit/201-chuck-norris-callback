@@ -30,7 +30,7 @@ app.layout = html.Div(children=[
                 {'label':list_of_choices[3], 'value':list_of_choices[3]},
                 {'label':list_of_choices[4], 'value':list_of_choices[4]},
                 ],
-                value=list_of_images[5],
+                value=list_of_images[4],
                 style={'width': '500px'}),
     html.Br(),
     html.Div(id='your-output-here', children=''),
