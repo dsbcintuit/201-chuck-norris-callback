@@ -10,6 +10,7 @@ githublink = 'https://github.com/dsbcintuit/201-chuck-norris-callback'
 list_of_images=['mainguy.jpg', 'landlady.jpg', 'husband.jpg', 'frog.jpg', 'ringsguy.jpg']
 heading1='Which Kung Fu Hustle Character Are You?'
 tabtitle='Tha Hustle'
+def_image='poster.jpeg'
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -18,9 +19,9 @@ server = app.server
 app.title=tabtitle
 
 ####### Layout of the app ########
-app.layout = html.Div(children=[
+app.layout = html.Div([
     html.H2(heading1),
-    html.Img(src=app.get_asset_url(intuit-ga-dat17/projects/201-chuck-norris-callback/assets/poster.jpeg), style={'width': 'auto', 'height': '10%'}),
+    html.Img(src=app.get_asset_url(def_image), style={'width': 'auto', 'height': '10%'}),
     dcc.Dropdown(id='your-input-here',
                 options=[
                 {'label':list_of_choices[0], 'value':list_of_images[0]},
