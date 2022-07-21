@@ -1,7 +1,6 @@
 ######### Import your libraries #######
 import dash
-from dash import dcc
-from dash import html
+from dash import dcc, html, Input, Output, State
 import os
 
 ###### Set up variables
@@ -32,7 +31,7 @@ app.layout = html.Div([
                 {'label':list_of_choices[4], 'value':list_of_images[4]},
                 {'label':list_of_choices[5], 'value':list_of_images[5]}
                 ],
-        value=list_of_images[5],
+        value=list_of_images[4],
         style={'width': '500px'},
         placeholder='Select a character'),
     html.Br(),
