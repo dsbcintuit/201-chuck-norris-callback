@@ -6,7 +6,7 @@ import os
 ###### Set up variables
 list_of_choices=['Sing', 'Landlady', 'Landlord', 'The Beast', 'The Tailor']
 githublink = 'https://github.com/dsbcintuit/201-chuck-norris-callback'
-list_of_images=['mainguy.jpg', 'landlady.jpg', 'husband.jpg', 'frog.jpg', 'ringsguy.jpg']
+list_of_images=['mainguy.jpeg', 'landlady.jpeg', 'husband.jpeg', 'frog.jpeg', 'ringsguy.jpeg']
 heading1='Which Kung Fu Hustle Character Are You?'
 tabtitle='Tha Hustle'
 def_image='poster.jpeg'
