@@ -5,9 +5,10 @@ import dash_html_components as html
 import os
 
 ###### Set up variables
-list_of_choices=['Poster','Sing', 'Landlady', 'Landlord', 'The Beast', 'The Tailor']
+list_of_choices=['Sing', 'Landlady', 'Landlord', 'The Beast', 'The Tailor']
 githublink = 'https://github.com/dsbcintuit/201-chuck-norris-callback'
-list_of_images=['poster.jpg', 'mainguy.jpg', 'landlady.jpg', 'husband.jpg', 'frog.jpg', 'ringsguy.jpg']
+image1='poster.jpg'
+list_of_images=['mainguy.jpg', 'landlady.jpg', 'husband.jpg', 'frog.jpg', 'ringsguy.jpg']
 heading1='Which Kung Fu Hustle Character Are You?'
 
 ########### Initiate the app
@@ -26,8 +27,9 @@ app.layout = html.Div([
                 {'label':list_of_options[1], 'value':list_of_images[1]},
                 {'label':list_of_options[2], 'value':list_of_images[2]},
                 {'label':list_of_options[3], 'value':list_of_images[3]},
+                {'label':list_of_options[4], 'value':list_of_images[4]}
                 ],
-                value=list_of_images[6],
+                value=list_of_images[5],
                 style={'width': '500px'}),
     html.Br(),
     html.Div(id='your-output-here', children=''),
