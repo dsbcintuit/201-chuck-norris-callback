@@ -20,7 +20,7 @@ app.title=tabtitle
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
-    html.Img(src=app.get_asset_url(def_image), style={'width': 'auto', 'height': '10%'}),
+    html.Img(src=app.get_asset_url(def_image), style={'width': '500px', 'height': '15%'}),
     dcc.Dropdown(
         id='your-input-here',
         options=[
@@ -42,12 +42,12 @@ app.layout = html.Div([
 
 
 ######### Interactive callbacks go here #########
-@app.callback(dash.dependencies.Output('your-output-here', 'children'),
+@app.callback([dash.dependencies.Output('your-output-here', 'children'),
+               dash.dependencies.Output('your-output-here', 'children')],
               [dash.dependencies.Input('your-input-here', 'value')])
+
 def display_value(whatever_you_chose):
 
-    return html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'}),
-    html.Br(),
     return f'The Kung Fu Hustle character that best represents you is {whatever_you_chose}.'
 
 
