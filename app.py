@@ -35,7 +35,7 @@ app.layout = html.Div([
         placeholder="Select a character",),        
     html.Br(),
     html.Div(id='your-output-here', children=''),
-    # html.Div(id='your-output-here', value=''),
+    # html.Div(id='your-output-here', image=''),
     html.Br(),
     html.A('Code on Github', href=githublink),
 ])
@@ -43,14 +43,14 @@ app.layout = html.Div([
 
 ######### Interactive callbacks go here #########
 @app.callback([Output('your-output-here', 'children'), 
-               # Output('your-output-here', 'value')
+               Output('your-output-here', 'image')
               ],
               [Input('your-input-here', 'value')])
 
 def display_value(whatever_you_chose):
 
-    return html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': '400px', 'height': '15%'}),
-    # return f'The Kung Fu Hustle character that best represents you is {whatever_you_chose}.'
+    # return html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': '400px', 'height': '15%'}),
+    return f'The Kung Fu Hustle character that best represents you is {whatever_you_chose}.'
 
 
 ######### Run the app #########
