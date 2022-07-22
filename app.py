@@ -35,7 +35,7 @@ app.layout = html.Div([
         placeholder="Select a character",),        
     html.Br(),
     html.Div(id='your-output-here', children=''),
-    html.Div(id='your-output-here', value=''),
+    # html.Div(id='your-output-here', value=''),
     html.Br(),
     html.A('Code on Github', href=githublink),
 ])
