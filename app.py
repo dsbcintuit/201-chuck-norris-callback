@@ -22,6 +22,7 @@ app.layout = html.Div([
     html.H2(heading1),
     html.Img(src=app.get_asset_url(def_image), style={'width': '500px', 'height': '15%'}),
     dcc.Dropdown(
+        placeholder='Select a character',
         id='your-input-here',
         options=[
                 {'label':list_of_choices[0], 'value':list_of_images[0]},
@@ -30,7 +31,6 @@ app.layout = html.Div([
                 {'label':list_of_choices[3], 'value':list_of_images[3]},
                 {'label':list_of_choices[4], 'value':list_of_images[4]}
                ],
-        placeholder='Select a character',
         value=list_of_images[4],
         style={'width': '500px'}),        
     html.Br(),
@@ -43,11 +43,12 @@ app.layout = html.Div([
 
 ######### Interactive callbacks go here #########
 @app.callback([dash.dependencies.Output('your-output-here', 'children'),
-               dash.dependencies.Output('your-output-here', 'children')],
+               dash.dependencies.Output('your-input-here', 'value')],
               [dash.dependencies.Input('your-input-here', 'value')])
 
 def display_value(whatever_you_chose):
 
+    return html.Img(src=app.get_asset_url(def_image), style={'width': '500px', 'height': '15%'}),
     return f'The Kung Fu Hustle character that best represents you is {whatever_you_chose}.'
 
 
