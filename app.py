@@ -21,7 +21,7 @@ app.title=tabtitle
 app.layout = html.Div([
     html.H2(heading1),
     html.Img(src=app.get_asset_url(def_image), style={'width': '400px', 'height': '15%'}),
-    dcc.Dropdown(
+    dcc.Dropdown(children=
         placeholder="Select a character",
         id='your-input-here',
         options=[
@@ -35,14 +35,14 @@ app.layout = html.Div([
         style={'width': '500px'}),        
     html.Br(),
     html.Div(id='your-output-here', children=''),
-    html.Iframe(src='', style={'width': '300px', 'height':'15%'}, id='image'),
+    html.Div(id='your-output-here', value=''),
     html.Br(),
     html.A('Code on Github', href=githublink),
 ])
 
 
 ######### Interactive callbacks go here #########
-@app.callback([Output('your-output-here', 'children'), Output('image', 'src')],
+@app.callback([Output('your-output-here', 'children'), Output('your-output-here', 'value')],
               [Input('your-input-here', 'value')])
 
 def display_value(whatever_you_chose):
