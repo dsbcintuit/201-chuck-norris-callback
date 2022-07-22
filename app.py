@@ -22,7 +22,6 @@ app.layout = html.Div([
     html.H2(heading1),
     html.Img(src=app.get_asset_url(def_image), style={'width': '400px', 'height': '15%'}),
     dcc.Dropdown(children=
-        placeholder="Select a character",
         id='your-input-here',
         options=[
                 {'label':list_of_choices[0], 'value':list_of_images[0]},
@@ -32,7 +31,8 @@ app.layout = html.Div([
                 {'label':list_of_choices[4], 'value':list_of_images[4]}
                ],
         value=list_of_images[4],
-        style={'width': '500px'}),        
+        style={'width': '500px'},
+        placeholder="Select a character",),        
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Div(id='your-output-here', value=''),
