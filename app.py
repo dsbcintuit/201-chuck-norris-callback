@@ -52,8 +52,8 @@ app.layout = html.Div([
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
-    # html.Img(id='image-output', src=app.get_asset_url(list_of_images[0])),
-    # html.Br(),
+    html.Img(src='', style={'width': '300', 'height':'200'}, id='image-output'),
+    html.Br(),
     html.A('Code on Github', href=githublink),
 ])
 
@@ -66,9 +66,9 @@ app.layout = html.Div([
 
 def display_value(value):
 
-    image = list_of_choices[choice_i]["demo"]
+    image = list_of_choices[choice_j]["image"]
     text = list_of_choices[choice_i]["label"]
-    return f'The Kung Fu Hustle character that best represents you is {list_of_choices[whatever_you_chose]}.', image
+    return f'The Kung Fu Hustle character that best represents you is {text}.', image
 
 
 ######### Run the app #########
