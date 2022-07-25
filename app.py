@@ -4,9 +4,30 @@ from dash import dcc, html, Input, Output, State
 import os
 
 ###### Set up variables
-list_of_choices=['Sing', 'Landlady', 'Landlord', 'The Beast', 'The Tailor']
+list_of_choices=[
+    {
+        "label":'Sing',
+        "image": 'mainguy.jpeg'
+    },
+    {
+        "label":'Landlady',
+        "image": 'landlady.jpeg'
+    },
+    {
+        "label": 'Landlord',
+        "image": 'husband.jpeg'
+    },
+    {
+        "label":'The Beast',
+        "image": 'frog.jpeg'
+    },
+    {
+        "label": 'The Tailor',
+        "image": 'ringsguy.jpeg'
+    }
+]
+ 
 githublink = 'https://github.com/dsbcintuit/201-chuck-norris-callback'
-list_of_images=['mainguy.jpeg', 'landlady.jpeg', 'husband.jpeg', 'frog.jpeg', 'ringsguy.jpeg']
 heading1='Which Kung Fu Hustle Character Are You?'
 tabtitle='Tha Hustle'
 def_image='poster.jpeg'
@@ -24,8 +45,8 @@ app.layout = html.Div([
     html.Img(src=app.get_asset_url(def_image), style={'width': '400px', 'height': '15%'}),
     dcc.Dropdown(
         id='your-input-here',
-        options=[{'label': list_of_choices[i], 'value': i} for i in range(len(list_of_choices))],
-        value=list_of_choices[0],
+        options=[{'label': i["label"], 'value': i} for i in enumerate(list_of_choices)],
+        value=0,
         style={'width': '500px'},
         placeholder=default_text,),        
     html.Br(),
@@ -43,11 +64,11 @@ app.layout = html.Div([
               ],
               [Input('your-input-here', 'value')])
 
-def display_value(whatever_you_chose):
+def display_value(value):
 
-    return {app.get_asset_url(list_of_images[whatever_you_chose]),
-        f'The Kung Fu Hustle character that best represents you is {list_of_choices[whatever_you_chose]}.'}
-    
+    image = list_of_choices[choice_i]["demo"]
+    text = list_of_choices[choice_i]["label"]
+    return f'The Kung Fu Hustle character that best represents you is {list_of_choices[whatever_you_chose]}.', image
 
 
 ######### Run the app #########
