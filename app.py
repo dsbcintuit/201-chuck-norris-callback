@@ -46,7 +46,7 @@ app.layout = html.Div([
     dcc.Dropdown(
         id='your-input-here',
         options=[{'label': list_of_choices[i], 'value': i} for i in list_of_choices],
-        value=list_of_choices[4])
+        value=list_of_choices[4]),
         # options=[{'label': i, 'value': i} for i in list_of_choices],
         # options=[{'label': i["label"], 'value': x} for x,i in enumerate(list_of_choices)],
         # placeholder=default_text,
