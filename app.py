@@ -49,10 +49,10 @@ app.layout = html.Div([
         placeholder=default_text,
         value=0,
         style={'width': '500px'}),        
-    html.Br(),
-    html.Div(id='your-output-here', children=''),
-    html.Br(),
-    html.Img(src=app.get_asset_url(''), style={'width': '300', 'height':'200'}, id='image_choice'),
+    # html.Br(),
+    # html.Div(id='your-output-here', children=''),
+    # html.Br(),
+    # html.Img(src='', id='image_choice'),
     html.Br(),
     html.A('Code on Github', href=githublink),
 ])
@@ -66,7 +66,7 @@ app.layout = html.Div([
 
 def display_value(choice_x):
 
-    image_chosen = list_of_choices[choice_x]["image"]
+    image_chosen = html.Img(src=app.get_asset_url(choice_x), style={'width': 'auto', 'height': '50%'})
     text = list_of_choices[choice_x]["label"]
     return f'The Kung Fu Hustle character that best represents you is {text}.', image_chosen
 
