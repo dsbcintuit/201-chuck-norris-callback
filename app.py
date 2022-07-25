@@ -66,10 +66,10 @@ app.layout = html.Div([
               ],
               [Input('your-input-here', 'value')])
 
-def display_value(choice_x):
+def display_value(whatever_you_chose):
 
-    image_chosen = html.Img(src=app.get_asset_url(choice_x), style={'width': 'auto', 'height': '50%'})
-    text = list_of_choices[choice_x]["label"]
+    image_chosen = html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': 'auto', 'height': '50%'})
+    text = list_of_choices[whatever_you_chose]["label"]
     return f'The Kung Fu Hustle character that best represents you is {text}.', image_chosen
 
 
