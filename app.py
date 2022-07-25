@@ -45,10 +45,10 @@ app.layout = html.Div([
     html.Img(src=app.get_asset_url(def_image), style={'width': '400px', 'height': '15%'}),
     dcc.Dropdown(
         id='your-input-here',
-        options=[{'label': i["label"], 'value': j} for j,i in enumerate(list_of_choices)],
-        value=0,
-        style={'width': '500px'},
-        placeholder=default_text,),        
+        options=[{'label': i["label"], 'value': x} for x,i in enumerate(list_of_choices)],
+        placeholder=default_text,
+        value=list_of_choices[0],
+        style={'width': '500px'}),        
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
@@ -64,11 +64,11 @@ app.layout = html.Div([
               ],
               [Input('your-input-here', 'value')])
 
-def display_value(choice_j):
+def display_value(choice_x):
 
-    image = list_of_choices[choice_j]["image"]
-    text = list_of_choices[choice_j]["label"]
-    return f'The Kung Fu Hustle character that best represents you is {text}.', image
+    image_chosen = list_of_choices[choice_x]["image"]
+    text = list_of_choices[choice_x]["label"]
+    return f'The Kung Fu Hustle character that best represents you is {text}.', image_chosen
 
 
 ######### Run the app #########
