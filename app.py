@@ -6,24 +6,24 @@ import os
 ###### Set up variables
 list_of_choices=[
     {
-        "label": 'Sing',
-        "image": 'mainguy.jpeg'
+        "label": "Sing",
+        "image": "mainguy.jpeg"
     },
     {
-        "label": 'Landlady',
-        "image": 'landlady.jpeg'
+        "label": "Landlady",
+        "image": "landlady.jpeg"
     },
     {
-        "label": 'Landlord',
-        "image": 'husband.jpeg'
+        "label": "Landlord",
+        "image": "husband.jpeg"
     },
     {
-        "label": 'The Beast',
-        "image": 'frog.jpeg'
+        "label": "The Beast",
+        "image": "frog.jpeg"
     },
     {
-        "label": 'The Tailor',
-        "image": 'ringsguy.jpeg'
+        "label": "The Tailor",
+        "image": "ringsguy.jpeg"
     }
 ]
  
@@ -45,14 +45,16 @@ app.layout = html.Div([
     html.Img(src=app.get_asset_url(def_image), style={'width': '400px', 'height': '15%'}),
     dcc.Dropdown(
         id='your-input-here',
-        options=[{'label': i["label"], 'value': x} for x,i in enumerate(list_of_choices)],
-        placeholder=default_text,
-        value=0,
-        style={'width': '500px'}),        
-    # html.Br(),
-    # html.Div(id='your-output-here', children=''),
-    # html.Br(),
-    # html.Img(src='', id='image_choice'),
+        options=[{'label': list_of_choices[i], 'value': i} for i in list_of_choices],
+        value=list_of_choices[4])
+        # options=[{'label': i, 'value': i} for i in list_of_choices],
+        # options=[{'label': i["label"], 'value': x} for x,i in enumerate(list_of_choices)],
+        # placeholder=default_text,
+        # value=0),        
+    html.Br(),
+    html.Div(id='your-output-here', children=''),
+    html.Br(),
+    html.Img(src='', style={'width': '500px'}, id='image_choice'),
     html.Br(),
     html.A('Code on Github', href=githublink),
 ])
