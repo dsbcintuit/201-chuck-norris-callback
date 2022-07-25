@@ -66,7 +66,7 @@ app.layout = html.Div([
 
 def display_value(choice_x):
 
-    image_chosen = list_of_choices[choice_x]["image_choice"]
+    image_chosen = list_of_choices[choice_x]["image"]
     text = list_of_choices[choice_x]["label"]
     return f'The Kung Fu Hustle character that best represents you is {text}.', image_chosen
 
