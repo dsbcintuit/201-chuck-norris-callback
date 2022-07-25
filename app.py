@@ -52,8 +52,8 @@ app.layout = html.Div([
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
-    html.Img(id='image-output', src=app.get_asset_url(list_of_images[0])),
-    html.Br(),
+    # html.Img(id='image-output', src=app.get_asset_url(list_of_images[0])),
+    # html.Br(),
     html.A('Code on Github', href=githublink),
 ])
 
