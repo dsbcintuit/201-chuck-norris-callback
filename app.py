@@ -64,10 +64,10 @@ app.layout = html.Div([
               ],
               [Input('your-input-here', 'value')])
 
-def display_value(value):
+def display_value(choice_j):
 
     image = list_of_choices[choice_j]["image"]
-    text = list_of_choices[choice_i]["label"]
+    text = list_of_choices[choice_j]["label"]
     return f'The Kung Fu Hustle character that best represents you is {text}.', image
 
 
