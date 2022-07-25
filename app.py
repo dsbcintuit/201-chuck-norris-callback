@@ -45,7 +45,7 @@ app.layout = html.Div([
     html.Img(src=app.get_asset_url(def_image), style={'width': '400px', 'height': '15%'}),
     dcc.Dropdown(
         id='your-input-here',
-        options=[{'label': list_of_choices[i], 'value': i} for i in list_of_choices],
+        options=[{'label': list_of_choices[i], 'value': i} for i in range(len(list_of_choices))],
         value=list_of_choices[4]),
         # options=[{'label': i, 'value': i} for i in list_of_choices],
         # options=[{'label': i["label"], 'value': x} for x,i in enumerate(list_of_choices)],
