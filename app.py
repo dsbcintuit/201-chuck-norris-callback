@@ -52,7 +52,7 @@ app.layout = html.Div([
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
-    html.Img(src='', style={'width': '300', 'height':'200'}, id='image-output'),
+    html.Img(src='', style={'width': '300', 'height':'200'}, id='image'),
     html.Br(),
     html.A('Code on Github', href=githublink),
 ])
