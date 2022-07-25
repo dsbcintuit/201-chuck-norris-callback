@@ -42,7 +42,7 @@ app.title=tabtitle
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
-    html.Img(src=app.get_asset_url(def_image), style={'width': '400px', 'height': '15%'}),
+    html.Img(src=def_image, style={'width': '400px', 'height': '15%'}),
     dcc.Dropdown(
         id='your-input-here',
         options=[{'label': i["label"], 'value': x} for x,i in enumerate(list_of_choices)],
