@@ -47,12 +47,12 @@ app.layout = html.Div([
         id='your-input-here',
         options=[{'label': i["label"], 'value': x} for x,i in enumerate(list_of_choices)],
         placeholder=default_text,
-        value=list_of_choices[0],
+        value=0,
         style={'width': '500px'}),        
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
-    html.Img(src='', style={'width': '300', 'height':'200'}, id='image'),
+    html.Img(src='', style={'width': '300', 'height':'200'}, id='image_choice'),
     html.Br(),
     html.A('Code on Github', href=githublink),
 ])
@@ -60,13 +60,13 @@ app.layout = html.Div([
 
 ######### Interactive callbacks go here #########
 @app.callback([Output('your-output-here', 'children'), 
-               Output('image', 'src')
+               Output('image_choice', 'src')
               ],
               [Input('your-input-here', 'value')])
 
 def display_value(choice_x):
 
-    image_chosen = list_of_choices[choice_x]["image"]
+    image_chosen = list_of_choices[choice_x]["image_choice"]
     text = list_of_choices[choice_x]["label"]
     return f'The Kung Fu Hustle character that best represents you is {text}.', image_chosen
 
