@@ -45,8 +45,9 @@ app.layout = html.Div([
 
 def display_value(whatever_you_chose):
 
-    # return html.Img(src=app.get_asset_url(whatever_you_chose), style={'width': '400px', 'height': '15%'}),
-    return f'The Kung Fu Hustle character that best represents you is {whatever_you_chose}.'
+    return {app.get_asset_url(list_of_images[whatever_you_chose]),
+        f'The Kung Fu Hustle character that best represents you is {list_of_choices[whatever_you_chose]}.'}
+    
 
 
 ######### Run the app #########
