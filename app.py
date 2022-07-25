@@ -60,7 +60,7 @@ app.layout = html.Div([
 
 ######### Interactive callbacks go here #########
 @app.callback([Output('your-output-here', 'children'), 
-               Output('image-output', 'src')
+               Output('image', 'src')
               ],
               [Input('your-input-here', 'value')])
 
