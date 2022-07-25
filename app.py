@@ -6,11 +6,11 @@ import os
 ###### Set up variables
 list_of_choices=[
     {
-        "label":'Sing',
+        "label": 'Sing',
         "image": 'mainguy.jpeg'
     },
     {
-        "label":'Landlady',
+        "label": 'Landlady',
         "image": 'landlady.jpeg'
     },
     {
@@ -18,7 +18,7 @@ list_of_choices=[
         "image": 'husband.jpeg'
     },
     {
-        "label":'The Beast',
+        "label": 'The Beast',
         "image": 'frog.jpeg'
     },
     {
@@ -45,7 +45,7 @@ app.layout = html.Div([
     html.Img(src=app.get_asset_url(def_image), style={'width': '400px', 'height': '15%'}),
     dcc.Dropdown(
         id='your-input-here',
-        options=[{'label': i["label"], 'value': i} for i in enumerate(list_of_choices)],
+        options=[{'label': i["label"], 'value': j} for j,i in enumerate(list_of_choices)],
         value=0,
         style={'width': '500px'},
         placeholder=default_text,),        
