@@ -39,7 +39,7 @@ app.layout = html.Div([
               [dash.dependencies.Input('your-input-here', 'value')])
 
 def display_value(whatever_you_chose):
-    return f'The Kung Fu Hustle character that best represents you is {whatever_you_chose}.'
+    return f'The Kung Fu Hustle character that best represents you is {list_of_choices[whatever_you_chose]}.'
 
 
 @app.callback(dash.dependencies.Output('image-output', 'src'),
