@@ -41,12 +41,18 @@ app.layout = html.Div([
 
 
 ######### Interactive callbacks go here #########
-@app.callback([dash.dependencies.Output('your-output-here', 'children'),
-              dash.dependencies.Output('image', 'src')]
+@app.callback([dash.dependencies.Output('your-output-here', 'children')],
               [dash.dependencies.Input('your-input-here', 'value')])
+
 def display_value(whatever_you_chose):
     return f'Chuck Norris will now execute you with a {whatever_you_chose}.'
 
+
+@app.callback(dash.dependencies.Output('image', 'src'),
+              [dash.dependencies.Input('your-input-here', 'value')])
+
+def display_value(whatever_you_chose):
+    return app.get_asset_url(list_of_images[whatever_you_chose])
 
 ######### Run the app #########
 if __name__ == '__main__':
