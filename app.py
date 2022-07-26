@@ -24,7 +24,7 @@ app.layout = html.Div([
 	    dcc.Dropdown(id='your-input-here',	
                 options=[{'label': list_of_choices[i], 'value': i} for i in range(len(list_of_choices))],	
                 value=list_of_choices[0],	
-                style={'width': '500px'}
+                style={'width': '500px'},
                 placeholder='Select an option'),
     html.Div(id='your-output-here', children=''),
     html.Br(),
