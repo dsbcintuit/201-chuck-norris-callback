@@ -26,6 +26,7 @@ app.layout = html.Div([
                 value=list_of_choices[0],	
                 style={'width': '500px'},
                 placeholder='Select an option'),
+    html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
     html.A('Code on Github', href=githublink),
@@ -34,7 +35,7 @@ app.layout = html.Div([
 
 
 ######### Interactive callbacks go here #########
-@app.callback([dash.dependencies.Output('your-output-here', 'children')],
+@app.callback(dash.dependencies.Output('your-output-here', 'children'),
               [dash.dependencies.Input('your-input-here', 'value')])
 
 def display_value(whatever_you_chose):
