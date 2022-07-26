@@ -29,7 +29,7 @@ app.layout = html.Div([
                 {'label':list_of_options[3], 'value':list_of_images[3]},
                 {'label':list_of_options[4], 'value':list_of_images[4]}
                 ],
-        value=list_of_options[0],
+        value=list_of_options[4],
         placeholder='Select option...',
         style={'width': '500px'}),
     html.Br(),
