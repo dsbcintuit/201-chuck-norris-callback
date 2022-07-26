@@ -4,7 +4,7 @@ from dash import dcc, html, Input, Output, State
 import os
 
 ###### Set up variables
-list_of_options=['punch', 'body-slam', 'round-house kick to the face']
+list_of_options=['Sing', 'Landlady', 'Landlord', 'The Beast', 'The Tailor']
 list_of_images=['mainguy.jpeg', 'landlady.jpeg', 'husband.jpeg', 'frog.jpeg', 'ringsguy.jpeg']
 githublink = 'https://github.com/dsbcintuit/201-chuck-norris-callback'
 # image1='poster.jpeg'
