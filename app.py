@@ -7,7 +7,7 @@ import os
 list_of_choices=['punch', 'body-slam', 'round-house kick to the face']
 list_of_images=['mainguy.jpeg', 'landlady.jpeg', 'husband.jpeg', 'frog.jpeg', 'ringsguy.jpeg']
 githublink = 'https://github.com/dsbcintuit/201-chuck-norris-callback'
-image1='poster.jpeg'
+# image1='poster.jpeg'
 heading1='Which Kung Fu Hustle Character Are You?'
 tabtitle='Tha Hustle'
 
@@ -20,11 +20,18 @@ app.title=tabtitle
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
-    html.Img(id='image', src=app.get_asset_url(image1), style={'width': 'auto', 'height': '10%'}),
+    html.Img(id='image', src=app.get_asset_url(list_of_images[0])), style={'width': 'auto', 'height': '10%'}),
     dcc.Dropdown(id='your-input-here',
-                options=[{'label': i, 'value': i} for i in list_of_choices],
-                value=list_of_choices[0],
-                style={'width': '500px'}),
+        options=[
+                {'label':list_of_options[0], 'value':list_of_images[0]},
+                {'label':list_of_options[1], 'value':list_of_images[1]},
+                {'label':list_of_options[2], 'value':list_of_images[2]},
+                {'label':list_of_options[3], 'value':list_of_images[3]},
+                {'label':list_of_options[4], 'value':list_of_images[4]}
+                ],
+        value=list_of_options[5],
+        placeholder='Select option...',
+        style={'width': '500px'}),
     html.Br(),
     html.Div(id='your-output-here', children=''),
     html.Br(),
