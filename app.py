@@ -45,14 +45,8 @@ app.layout = html.Div([
               [dash.dependencies.Input('your-input-here', 'value')])
 
 def display_value(whatever_you_chose):
-    return f'Chuck Norris will now execute you with a {whatever_you_chose}.'
+    return f'The Kung Fu Hustle character that best represents you is {whatever_you_chose}.'
 
-
-@app.callback(dash.dependencies.Output('image', 'src'),
-              [dash.dependencies.Input('your-input-here', 'value')])
-
-def display_value(whatever_you_chose):
-    return app.get_asset_url(list_of_images[whatever_you_chose])
 
 ######### Run the app #########
 if __name__ == '__main__':
